@@ -1,0 +1,13 @@
+Version 1.2:
+============
+
+* Added: columns, items and subitems collection editors. Now user can add columns and items directly from VS form designer.
+* Added: ability to change column and item colors on render such as item highlight color, select color ...etc
+* Added: ability to change and show the background image.
+* Added: added new property "StretchThumbnailsToFit", Indicates if the item image will be stretched using ratio stretch to fit thumbnails size. Thumbnails mode only.
+* Improved: column edit (move and reorder), removed some glitches.
+* Improved: reordering a column is easier now when the target column is not visible and need to scroll, moving the dragged column to the corner will scroll automatically.
+* Fixed: control allows to resize column even the new column width gets under 0.
+* Fixed: bug when a key pressed in thumbnail view to select item using char.
+* Fixed: bug on scroll bar values calculations with thumbnails view.
+* Fixed: some bugs on thumbnails view.

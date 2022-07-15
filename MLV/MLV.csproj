@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6570A5B2-FA9E-4DED-807A-45254515DB33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLV</RootNamespace>
+    <AssemblyName>MLV</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\x86\Debug\MLV.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\MLVChildItemsCollection.cs" />
+    <Compile Include="Collections\MLVColumnsCollection.cs" />
+    <Compile Include="Collections\MLVItemsCollection.cs" />
+    <Compile Include="Collections\MLVSubItemsCollection.cs" />
+    <Compile Include="DrawingTypes\ColumnObject.cs" />
+    <Compile Include="DrawingTypes\ImageObject.cs" />
+    <Compile Include="DrawingTypes\ItemLineObject.cs" />
+    <Compile Include="DrawingTypes\SubItemObject.cs" />
+    <Compile Include="Enums\MLVBackgroundRenderMode.cs" />
+    <Compile Include="Enums\MLVItemDrawMode.cs" />
+    <Compile Include="Enums\MLVMode.cs" />
+    <Compile Include="EventArgs\ColumnEventArgs.cs" />
+    <Compile Include="EventArgs\InfoChangingEventArgs.cs" />
+    <Compile Include="EventArgs\MLVDrawItemEventArgs.cs" />
+    <Compile Include="EventArgs\MLVDrawSubItemEventArgs.cs" />
+    <Compile Include="EventArgs\RatingChangedEventArgs.cs" />
+    <Compile Include="EventArgs\ShowThumbnailInfoEventArgs.cs" />
+    <Compile Include="EventArgs\ShowTooltipEventArgs.cs" />
+    <Compile Include="Interfaces\IMLVElement.cs" />
+    <Compile Include="ManagedListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagedListView.Designer.cs">
+      <DependentUpon>ManagedListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MLVPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MLVPanel.Designer.cs">
+      <DependentUpon>MLVPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Types\MLVChildItem.cs" />
+    <Compile Include="Types\MLVColumn.cs" />
+    <Compile Include="Types\MLVItem.cs" />
+    <Compile Include="Types\MLVRatingSubItem.cs" />
+    <Compile Include="Types\MLVSubItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ManagedListView.resx">
+      <DependentUpon>ManagedListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\bullet_arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noneRating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_5.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
